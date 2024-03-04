@@ -3,6 +3,7 @@ info:
   version: 0.0.1
   title: 'Esercizio Botanica'
   description: 'API per gestire un blog di botanica'
+host: botanica.swagger.io
 schemes:
   - http
   - https
@@ -11,18 +12,31 @@ paths:
   /articoli/:
     get:
       description: "Ottenere l'elenco di tutti gli articoli."
+      operationId: "listaArticoli"
       parameters:
         - name: mindata
           in: query
           description: "minimum data degli articoli"
+          type: string
+          required: true
         - name: categoria
           in: query
           description: "Categoria degli articoli"
           type: string
+          required: true
+          enum:
+            - "orto"
+            - "fiori"
+            - "attrezzi"
+            - "prodotti"
+            - "consigli"
+            - "news"
       responses:
         200:
           description: 'successo'
           schema:
+            type: array
+            items:
               $ref: '#/definitions/Articolo'
         400:
           description: 'Errore richiesta'
@@ -39,7 +53,9 @@ paths:
       responses:
         200:
           description: 'succeso'
-  /articoli/{articoloID}/:
+        400:
+          description: "errore richiesta"
+  /articoli/{articoloID}:
     put:
       description: 'aggiornare un articolo'
       operationId: 'aggiornaArticolo'
@@ -49,6 +65,12 @@ paths:
           type: integer
           in: path
           required: true
+        - name: articolo
+          in: body
+          description: "articolo con il contenuto aggiornato"
+          required: true
+          schema:
+            $ref: "#/definitions/Articolo"
       responses:
         200:
           description: 'successo - articolo aggiornato'
@@ -56,21 +78,35 @@ paths:
           description: 'errore, ID non valido'
 
 definitions:
- Articolo:
-  type: object
-  properties:
-    id:
-      type: integer
-      minimum: 0
-    data:
-      type: string
-      example: '06/03/2022'
-    titolo:
-      type: string
-      example: 'Le fiori invernali'
-    contenuto:
-      type: string
-      example: "L'inverno ci porta delle fiori belle..."
-    categoria:
-      type: string
-      example: 'orto'
+  Articolo:
+    type: object
+    required:
+      - id
+      - data
+      - titolo
+      - categoria
+      - contenuto
+    properties:
+      id:
+        type: integer
+        minimum: 0
+      data:
+        type: string
+        example: '06/03/2022'
+      titolo:
+        type: string
+        example: 'Le fiori invernali'
+      contenuto:
+        type: string
+        example: "L'inverno ci porta delle fiori belle..."
+      categoria:
+        type: array
+        items:
+          type: "string"
+          enum:
+            - "orto"
+            - "fiori"
+            - "attrezzi"
+            - "prodotti"
+            - "consigli"
+            - "news"

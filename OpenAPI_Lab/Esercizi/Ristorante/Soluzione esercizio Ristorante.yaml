@@ -3,10 +3,11 @@ info:
   description: 'API gestione ristorante e menù'
   title: 'Esercizio ristoranti'
   version: 1.0.0
+
 paths:
   /menus/:
     get:
-      summary: 'Elenco dei menu'
+      summary: 'ritorna elenco dei menu'
       operationId: 'listamenu'
       responses:
         '200':
@@ -17,9 +18,10 @@ paths:
               $ref: '#/definitions/Menu'
         '400':
           description: 'Errore richiesta'
+
   /menus/{menuId}:
     get:
-      description: 'Informazioni su un menù'
+      summary: 'ritorna informazioni su un menù'
       operationId: 'infomenu'
       parameters:
       - name: menuId
@@ -34,27 +36,33 @@ paths:
             $ref: '#/definitions/Menu'
         '400':
           description: 'ID non valido'
+
   /menus/{menuId}/piatti/:
     post:
       summary: 'Aggiunge un piatto ad un menu'
       operationId: 'aggiungipiatto'
       parameters:
+
       - name: menuId
         in: path
         description: "ID del menu"
         required: true
         type: integer
+
       - name: piatto
         in: body
         description: 'Piatto da aggiungere'
         required: true
         schema:
             $ref: '#/definitions/Piatto'
+            
       responses:
         '200':
           description: 'successo'
         '400':
           description: 'ID non valido'
+
+
 definitions:
   Menu:
     type: object
@@ -68,6 +76,7 @@ definitions:
       descrizione:
         type: string
         example: Menu di terra
+  
   Piatto:
     type: object
     required:
@@ -84,3 +93,4 @@ definitions:
       prezzo:
         type: integer
         minimum: 1
+      
