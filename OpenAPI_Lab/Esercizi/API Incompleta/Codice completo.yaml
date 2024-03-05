@@ -11,7 +11,7 @@ schemes:
 paths:
   /articoli/:
     get:
-      description: "Ottenere l'elenco di tutti gli articoli."
+      summary: "Ottenere l'elenco di tutti gli articoli."
       operationId: "listaArticoli"
       parameters:
         - name: mindata
@@ -41,7 +41,7 @@ paths:
         400:
           description: 'Errore richiesta'
     post:
-      description: 'Aggiungere un nuovo articolo'
+      summary: 'Aggiungere un nuovo articolo'
       operationId: 'aggiungiArticolo'
       parameters:
         - name: articolo
@@ -57,7 +57,7 @@ paths:
           description: "errore richiesta"
   /articoli/{articoloID}:
     put:
-      description: 'aggiornare un articolo'
+      summary: 'aggiornare un articolo'
       operationId: 'aggiornaArticolo'
       parameters:
         - name: articoloID

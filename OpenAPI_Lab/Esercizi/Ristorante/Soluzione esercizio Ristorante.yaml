@@ -42,26 +42,22 @@ paths:
       summary: 'Aggiunge un piatto ad un menu'
       operationId: 'aggiungipiatto'
       parameters:
-
       - name: menuId
         in: path
         description: "ID del menu"
         required: true
         type: integer
-
       - name: piatto
         in: body
         description: 'Piatto da aggiungere'
         required: true
         schema:
             $ref: '#/definitions/Piatto'
-            
       responses:
         '200':
           description: 'successo'
         '400':
           description: 'ID non valido'
-
 
 definitions:
   Menu:
