@@ -41,7 +41,7 @@ h4 {
 	padding-bottom: 100px;
 }
 
-.col-lg-1 {
+.col-lg-3 {
 	text-align: center;	
 }
 
@@ -49,7 +49,7 @@ h4 {
 	background-color: black;
 	border-color: black;
 	font-family: "Courier";
-	color: white
+	color: white;
 }
 
 .col-md-12.col-lg-3 a {
