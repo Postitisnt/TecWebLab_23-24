@@ -1,0 +1,23 @@
+*{
+    font-size: large;
+}
+
+#contenitore{
+    display: flex;
+    flex-direction: column;
+}
+button, input{
+    width: min-content;
+    padding: 5px; 
+}
+
+button{
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+}
+
+#output{
+    font-size: 40px;  
+}
+
+
