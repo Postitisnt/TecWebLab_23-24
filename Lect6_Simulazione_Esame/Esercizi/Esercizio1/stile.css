@@ -8,7 +8,7 @@ body{
 }
 
 body>div {
-	width:75vw;
+	width: 75vw;
 	margin-left:auto;
 	margin-right:auto;
 	display: flex;
@@ -69,7 +69,7 @@ body>div>div:first-child>span{
 
 body>div>div:first-child>div{
 	margin-top: 5%;
-	display:grid;
+	display: grid;
 	grid-template-columns: 25% 60%;
 	grid-template-rows: 6vh 12vh 6vh;
 	color:grey;

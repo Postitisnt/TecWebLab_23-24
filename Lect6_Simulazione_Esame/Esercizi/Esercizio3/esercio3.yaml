@@ -56,7 +56,7 @@ paths:
 
   /serie/{idSerie}/episodi/{numero}:
     put:
-      description: "modificare il titolo di uno specifico episodio di una serie TV"
+      description: "Modificare il titolo di uno specifico episodio di una serie TV"
       operationId: setTitleEpisodeById
       parameters:
         - name: idSerie
@@ -98,7 +98,7 @@ definitions:
       titolo:
         type: string
         example: "Diavoli"
-        description: "il nome della serie tv"
+        description: "Titolo della serie tv"
       dataPubb:
         type: string
         format: date
