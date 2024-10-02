@@ -1,0 +1,136 @@
+/* Struttura Generale */
+*{
+	font-size: 15px;
+}
+
+body{
+	background-color:#f5f5d5;	
+}
+
+body>div {
+	width: 75vw;
+	margin-left:auto;
+	margin-right:auto;
+	display: flex;
+	flex-direction: row;
+	gap: 5vw;
+	padding-bottom: 2vh;
+}
+h2{
+	color:green;	
+	font-size: 25px;
+}
+
+a{
+	width: fit-content;
+	color: #af32b1;	
+}
+
+a:hover{
+	background-color: yellow;
+}
+
+/* Parte sinistra */
+body>div>div:first-child{
+	width:60%;
+	margin-left:5%;
+	margin-right:5%;
+}
+
+body>div>div:first-child>p{
+	margin-top: 2vh;
+	margin-bottom:2vh;
+	color: grey;
+}
+
+table{
+	margin-top: 4vh;
+	margin-bottom: 4vh;
+	width:100%;
+}
+
+th{
+	text-align:left;
+	text-indent: 2%;
+	color:white;
+	background-color:black;
+	height: 3vh;
+}
+
+td{
+	border-top: solid 1px white;
+	text-indent: 2%;	
+	height: 3vh;
+}
+
+body>div>div:first-child>span{
+	color:grey;
+}
+
+body>div>div:first-child>div{
+	margin-top: 5%;
+	display: grid;
+	grid-template-columns: 25% 60%;
+	grid-template-rows: 6vh 12vh 6vh;
+	color:grey;
+	gap: 1vh;
+}
+
+input{	
+	border: solid #dbd9d9 1px;
+}
+
+select{
+	height: min-content;
+	background-color: #ffffff;
+}
+
+button{
+	float: right;
+	background-color:green;
+	padding-left: 2vw;
+	padding-right: 2vw;
+	padding-top: 0.5vh;
+	padding-bottom: 0.5vh;
+	color:white;
+}
+
+/* Parte destra */
+body>div>div:nth-child(2){
+	width: 25%;
+	margin-right: 5%;
+}
+
+body>div>div:nth-child(2)>p{
+	display: flex;
+	flex-direction: column;
+	margin-top:3vh;
+	margin-bottom:5vh;
+}
+
+body>div>div:nth-child(2)>p>span:first-child{
+	color:green;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+body>div>div:nth-child(2)>p>span:nth-child(2){
+	font-style: italic;
+	margin-bottom: 2vh;
+}
+
+body>div>div:nth-child(2)>p>span:nth-child(3){
+	color: grey;
+}
+
+img{
+	width: 80%;
+	height: auto;
+}
+
+
+
+
+
+
+
